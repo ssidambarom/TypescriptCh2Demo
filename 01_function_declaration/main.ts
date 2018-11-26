@@ -15,3 +15,4 @@ console.log(newGreeting("Sylvain"));
 myApi.method1();
 
 toto.default();
+alert("toto")

@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "module": "system",
+        "module": "commonjs",
         "noImplicitAny": true,
         "noEmitOnError": true,
         "sourceMap": true,
@@ -10,10 +10,5 @@
     "files": [
         "./main.ts"
     ],
-    "exclude": [
-        "node_modules",
-        "**/*.spec.ts"
-    ],
-    "esModuleInterop": true,
     "compileOnSave": true
   }
