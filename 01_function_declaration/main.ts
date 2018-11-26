@@ -16,3 +16,16 @@ myApi.method1();
 
 toto.default();
 alert("toto")
+
+
+
+let unamedGreeting :(name:string)=>string;
+
+unamedGreeting = function(name:string){
+    return "Hi "+name+". This is my unnamed function Greeting.";
+}
+
+
+unamedGreeting = function(name:string){
+    return 0;
+}
