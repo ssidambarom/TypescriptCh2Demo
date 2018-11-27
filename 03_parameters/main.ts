@@ -69,9 +69,12 @@ console.log(informalGreetingV2("Sylvain")); // OK
 
 //exemple de fonction à paramètre du reste
 
-function longGreeting(firstName: string, ...otherNames: string[]) {
-    return "Hello " + firstName + otherNames.join(" ") + "."
+function groupGreeting(firstName: string, ...otherNames: string[]) {
+    return "Hello " + firstName + otherNames.join(", ") + "."
 }
+
+console.log(groupGreeting("Riri","Fifi","Loulou"))
+
 
 let param2 = 2;
 let param3 = { firstName: "Sylvain", lastName: "Sidambarom" };
