@@ -68,6 +68,11 @@ console.log(informalGreetingV2("Sylvain")); // OK
 
 
 //exemple de fonction à paramètre du reste
+
+function longGreeting(firstName: string, ...otherNames: string[]) {
+    return "Hello " + firstName + otherNames.join(" ") + "."
+}
+
 let param2 = 2;
 let param3 = { firstName: "Sylvain", lastName: "Sidambarom" };
 console.log("mon message", "param1", param2, param3)
