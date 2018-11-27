@@ -7,7 +7,7 @@ class PersonnageJs {
     public uncorrectJSGreeting(name: string) {
         this.name = name;
         setInterval(function(){
-            console.log("Hi, " + this.name);//contexte de la méthode setInterval où name n'existe pas!!
+            console.log("Hi, " + this.name,"Without this capture.");//contexte de la méthode setInterval où name n'existe pas!!
         },1000)
     }
     
@@ -15,7 +15,7 @@ class PersonnageJs {
         let self = this;// on capture this (contexte de la classe personnge) où name existe
         self.name = name;
         setInterval(function(){
-            console.log("Hi, " + self.name);
+            console.log("Hi, " + self.name,"With this capture.");
         },1000)
     }
 
@@ -23,9 +23,14 @@ class PersonnageJs {
     public greeting(name: string) {
         this.name = name;
         setInterval(()=>{
-            console.log("Hi, " + this.name);
+            console.log("Hi, " + this.name,"With arrow function.");
         },1000)
     }
 };
 
 
+let perso = new PersonnageJs();
+
+perso.uncorrectJSGreeting("Sylvain")
+perso.correctJSGreeting("Sylvain")
+perso.greeting("Sylvain")
