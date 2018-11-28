@@ -1,31 +1,50 @@
 import myApi from "./api"
-import * as toto from "./globals"
-
-function greeting(name: string){
-    return "Hi, "+ name;
-}
-
-let newGreeting = function(name: string){
-    return "Hi "+name +", my friend";
-}
+import { myGlobalFunction } from "./globals"
 
 console.log(greeting("Sylvain"));
-console.log(newGreeting("Sylvain"));
+console.log(newGreeting("Sylvain"));// Erreur newGreeting n'est pas encore affectée
+
+
+
+function greeting(name: string) {
+    return "Hi, " + name;
+}
+
+let newGreeting = function (name: string) {
+    return "Hi " + name + ", my friend";
+}
+
+
+
+
 
 myApi.method1();
 
-toto.default();
+
+
+
+
+
+myGlobalFunction();
 alert("toto")
 
+function fullyTypedGreenting(name: string): string {
+    return "Hello, " + name + ", my friend.";
+}
 
+let anyGreeting: (name: string) => string;
 
-let unamedGreeting :(name:string)=>string;
-
-unamedGreeting = function(name:string){
-    return "Hi "+name+". This is my unnamed function Greeting.";
+anyGreeting = function (name: string) {
+    return "Hi " + name + ". This is my unnamed function Greeting.";
 }
 
 
-unamedGreeting = function(name:string){
+anyGreeting = function (name: string) {
+    return "Yo " + name + ". Another greeting function.";
+}
+
+anyGreeting = function (name: string) {
+    // cette fonction ne peut pas être affectée à anyGreeting 
+    // cas elle retourne une valeur de type number.
     return 0;
 }

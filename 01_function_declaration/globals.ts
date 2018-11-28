@@ -1,3 +1,3 @@
-export default function (){
+export function myGlobalFunction(){
     console.log("Global function called.");
 }

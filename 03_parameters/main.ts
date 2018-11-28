@@ -12,19 +12,33 @@ function formalGreeting(firstName: string, lastName: string) {
 }
 
 
-// let badUse = formalGreeting("Sylvain");// Erreur, ne peut pas être utilisé comme ceci
+
+
+
+
+let badUse = formalGreeting("Sylvain");// Erreur, ne peut pas être utilisé comme ceci
 let goodUse = formalGreeting("Sylvain", "Sidambarom");// OK
 console.log(goodUse);
 
 
 
 // exemple de typage déduit
-let sum = function (a: number, b: number): number { return a + b; }
 
-let sum2: (a: number, b: number) => number = function (a, b) {
+
+
+let sum = function (a: number, b: number) { return a + b; }
+
+let sum2 = function (a: number, b: number): number { return a + b; }
+
+let otherSum: (a: number, b: number) => number;
+
+otherSum = function (a, b) {
     return a + a + b;
 }
 
+let otherSum: (a: number, b: number) => number = function (a, b) {
+    return a + a + b;
+}
 
 let strangeGreeting: (name: string, enthusiasm: number) => string = function (a, b) {
     let result: string = "Hi";
@@ -51,7 +65,7 @@ function informalGreeting(name?: string) {
 
 console.log(informalGreeting()); // OK
 console.log(informalGreeting("Sylvain")); // OK
-// console.log(informalGreeting("Sylvain","Sidambarom")); // Erreur, il y a trop de paramètres
+console.log(informalGreeting("Sylvain","Sidambarom")); // Erreur, il y a trop de paramètres
 
 
 
@@ -66,8 +80,15 @@ console.log(informalGreetingV2("Sylvain")); // OK
 
 
 
-
 //exemple de fonction à paramètre du reste
+
+function generalSum(...numbers: number[]): number {
+    let result = 0;
+    numbers.forEach((value) => result += value)
+    return result;
+}
+
+console.log(generalSum(1,4,5,6));// 16
 
 function groupGreeting(firstName: string, ...otherNames: string[]) {
     return "Hello " + firstName + otherNames.join(", ") + "."

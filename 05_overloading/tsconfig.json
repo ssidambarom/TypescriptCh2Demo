@@ -1,14 +1,14 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "system",
         "noImplicitAny": true,
         "noEmitOnError": true,
         "sourceMap": true,
-        "outDir": "./js/",
+        "outFile": "./js/main.js",
         "target": "es5"
     },
-    "files": [
-        "./main.ts"
+    "include": [
+        "*.ts"
     ],
     "compileOnSave": true
   }
