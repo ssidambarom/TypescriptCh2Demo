@@ -31,6 +31,8 @@ class PersonnageJs {
 
 let perso = new PersonnageJs();
 
-perso.uncorrectJSGreeting("Sylvain")
-perso.correctJSGreeting("Sylvain")
-perso.greeting("Sylvain")
+perso.uncorrectJSGreeting("Sylvain"); //Hi,  Without this capture.
+perso.correctJSGreeting("Sylvain");// Hi, Sylvain With this capture.
+perso.greeting("Sylvain");// Hi, Sylvain With  arrow function.
+
+
